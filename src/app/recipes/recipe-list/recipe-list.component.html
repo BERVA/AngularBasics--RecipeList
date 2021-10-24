@@ -1,0 +1,37 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success">Add Recipe</button>
+    </div>
+    <!-- <div class="col-xs-12">
+      <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
+        <div class="col-8">
+          <h4 class="list-group-item-heading"> {{recipe.name}}</h4>
+          <p class="list-group-item-text">
+            {{recipe.description}}
+          </p>
+        </div>
+        <div class="col-4">
+          <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-responsive" style="max-height: 60px;">
+        </div>
+      </a>
+      <app-recipe-item></app-recipe-item>
+    </div> -->
+  </div>
+  <div class="row mt-2">
+
+<div class="card-deck" [ngStyle]="{'display': 'flex'}">
+  <div class="card"  *ngFor="let recipe of recipes">
+    <img class="card-img-top" [src]="recipe.imagePath" alt="{{recipe.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <app-recipe-item></app-recipe-item>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
