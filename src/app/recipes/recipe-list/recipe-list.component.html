@@ -22,7 +22,7 @@
   <div class="row mt-2">
 
     <div class="card-deck" [ngStyle]="{'display': 'flex'}">
-      <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item>
+      <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" ></app-recipe-item>
     </div>
   </div>
 </div>
