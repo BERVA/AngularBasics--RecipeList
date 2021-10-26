@@ -21,8 +21,8 @@
   </div>
   <div class="row mt-2">
 
-    <div class="card-deck" [ngStyle]="{'display': 'flex'}">
-      <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" ></app-recipe-item>
+    <div class="card-group">
+      <div class="card" app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" ></div>
     </div>
   </div>
 </div>

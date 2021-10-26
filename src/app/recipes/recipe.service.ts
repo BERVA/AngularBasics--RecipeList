@@ -1,4 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
 @Injectable({
   providedIn: 'root'
@@ -8,14 +10,35 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe('Spagetti', 'Spagetti Description of recipe', 'https://a7m3f5i5.rocketcdn.me/wp-content/uploads/2015/09/moms-spaghetti-sauce-recipe-a-healthy-slice-of-life-6-of-6-800x600.jpg'),
-    new Recipe('Carbonara', 'Carbonara Description of recipe', 'https://a7m3f5i5.rocketcdn.me/wp-content/uploads/2015/09/moms-spaghetti-sauce-recipe-a-healthy-slice-of-life-6-of-6-800x600.jpg'),
-    new Recipe('Hamburger', 'Hamburger Description of recipe', 'https://a7m3f5i5.rocketcdn.me/wp-content/uploads/2015/09/moms-spaghetti-sauce-recipe-a-healthy-slice-of-life-6-of-6-800x600.jpg')
+    new Recipe('Spaghetti Genovese',
+     'This vegetarian pasta dish is the perfect solution when you want something quick and tasty - and everything cooked in one pan',
+    'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1845_10-e6b81e8.jpg',
+    [
+      new Ingredient('Spaghetti', 1),
+      new Ingredient('Green Bean', 3),
+      new Ingredient('Potato', 2)
+    ]),
+    new Recipe('Pork souvlaki',
+     'Serve our speedy pork souvlaki skewers when you’re in need of a quick and easy midweek meal. Serve with flatbreads and yogurt and chilli sauces on the side.',
+    'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pork-souvlaki-1380e9d.jpg',
+    [
+      new Ingredient('Lemon', 1),
+      new Ingredient('Garlic', 2),
+      new Ingredient('Lean Pork Shoulder', 1)
+    ])
   ];
 
   getRecipes(){
     return this.recipes.slice();
   }
 
-  constructor() { }
+  constructor(private slService: ShoppingListService) { }
+
+
+  addIngrsToShoppingList(ingredients: Ingredient[]){
+    this.slService.addedIngredients(ingredients)
+
+
+
+  }
 }

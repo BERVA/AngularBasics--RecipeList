@@ -24,4 +24,11 @@ export class ShoppingListService {
   }
 
   constructor() { }
+
+  addedIngredients(ingredients: Ingredient[]){
+
+    this.ingredients.push(...ingredients);
+    this.ingredientsChange.emit(this.ingredients.slice())
+
+  }
 }
