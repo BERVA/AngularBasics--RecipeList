@@ -1,8 +1,8 @@
 
   <img class="card-img-top" [src]="recipe.imagePath" alt="{{recipe.name}}">
-  <div class="card-body">
+  <div class="card-body" routerLinkActive="bg-danger text-white">
     <h5 class="card-title">{{recipe.name}}</h5>
     <p class="card-text">{{recipe.description}}</p>
-   <a href="#" class="btn btn-danger" (click)="onSelected()">Recipe Detail</a>
+   <a class="btn btn-danger" [routerLink]="[index]" routerLinkActive="bg-white text-danger">Recipe Detail</a>
   </div>
 

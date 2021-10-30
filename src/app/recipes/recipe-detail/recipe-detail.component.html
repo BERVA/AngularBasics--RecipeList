@@ -10,13 +10,13 @@
 </div>
 <div class="row mt-1">
   <div class="btn-group" appDropdown>
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Manage Recipe
     </button>
     <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
       <li><a class="dropdown-item" (click)="onAddToShoppingList()">To Shopping list</a></li>
-      <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
-      <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+      <li><a class="dropdown-item" (click)="onEditRecipe()">Edit Recipe</a></li>
+      <li><a class="dropdown-item" >Delete Recipe</a></li>
     </ul>
 
   </div>

@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <button class="btn btn-success">Add Recipe</button>
+      <button class="btn btn-success" (click)="onNewRecipe()">Add Recipe</button>
     </div>
     <!-- <div class="col-xs-12">
       <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
@@ -22,7 +22,7 @@
   <div class="row mt-2">
 
     <div class="card-group">
-      <div class="card" app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" ></div>
+      <div class="card" app-recipe-item *ngFor="let recipeEl of recipes; let i = index" [recipe]="recipeEl" [index]="i"></div>
     </div>
   </div>
 </div>
