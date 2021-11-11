@@ -3,19 +3,23 @@
       <a  class="navbar-brand">RecipeBook</a>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/recipes" routerLinkActive="active">Recipes</a>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/auth" routerLinkActive="active" *ngIf="!isAuth">Authenticate</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right ms-auto">
-          <li class="dropdown" appDropdown>
+          <li class="nav-item" *ngIf="isAuth"><a class="nav-link" (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
+          <li class="nav-item dropdown" appDropdown *ngIf="isAuth">
             <a  class="nav-link dropdown-toggle" role="button">Manage</a>
-            <ul class="dropdown-menu">
-              <li><a  class="dropdown-item" (click)="onSaveData()">Save Data</a></li>
-              <li><a  class="dropdown-item" (click)="onFetchData()">Fetch Data</a></li>
+            <ul class="dropdown-menu end-0">
+              <li><a  class="dropdown-item" (click)="onSaveData()" style="cursor: pointer;">Save Data</a></li>
+              <li><a  class="dropdown-item" (click)="onFetchData()" style="cursor: pointer;">Fetch Data</a></li>
             </ul>
           </li>
         </ul>
