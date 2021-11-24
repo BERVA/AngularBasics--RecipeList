@@ -1,0 +1,32 @@
+.backdrop{
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .75);
+  z-index: 50;
+}
+
+.alert-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-width: 20vw;
+  min-height: 20vh;
+  padding: 50px;
+  background: white;
+  border: 2px inset red;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+  z-index: 51;
+}
+
+.alert-box-actions{
+  text-align: right;
+}

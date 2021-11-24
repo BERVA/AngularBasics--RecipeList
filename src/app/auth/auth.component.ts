@@ -39,7 +39,6 @@ export class AuthComponent implements OnInit {
 
       if(this.isLoginMode){
         authObs =  this.AuthService.logIn(email, password);
-        console.log(password);
 
       } else {
        authObs = this.AuthService.signup(email, password);
@@ -55,5 +54,9 @@ export class AuthComponent implements OnInit {
       });
     }
     authForm.reset();
+  }
+
+  onHandleError(){
+    this.error = null;
   }
 }
