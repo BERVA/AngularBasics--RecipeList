@@ -40,7 +40,6 @@ const handleAuthentication = (expiresIn: number, email: string, userId: string, 
     })
 }
 const handleError = (errorRes: HttpErrorResponse) => {
-
   let errorMessage = "An error occured!";
   if(!errorRes.error || !errorRes.error.error){
     return of(new AuthActions.AuthenticateFail(errorMessage));
@@ -189,14 +188,16 @@ export class AuthEffects {
       )
     ), {dispatch: false}
   )
+
+
   authRedirect = createEffect(() =>
     this.actions$.pipe
       (
         ofType(AuthActions.AUTHENTICATE_SUCCESS),
           tap(
-            (authSuccesAction: AuthActions.AuthenticateSuccess) =>
+            (authSuccessAction: AuthActions.AuthenticateSuccess) =>
             {
-              if(authSuccesAction.user.redirect){
+              if(authSuccessAction.user.redirect){
                 this.authService.clearLogoutTimer();
                 this.router.navigate(['/']);
               }

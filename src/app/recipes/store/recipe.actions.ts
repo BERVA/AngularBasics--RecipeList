@@ -11,7 +11,6 @@ export const STORE_RECIPES = '[Recipes] Store Recipes';
 
 export class SetRecipes implements Action {
   readonly type = SET_RECIPES;
-
   constructor(
     public setRecipe: Recipe[]
   ){}

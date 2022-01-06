@@ -9,6 +9,7 @@ export interface AppState{
   shoppingList: fromShoppingList.ShoppingListState;
   auth: fromAuth.AuthState;
   recipes: fromRecipes.RecipeState;
+
 }
 
 export const appReducer: ActionReducerMap<AppState, any> = {
